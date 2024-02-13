@@ -1,4 +1,5 @@
-from contacts.view import read_contact_from_file, write_contact_to_file, change_contact_to_file, search_contact_by_key
+from contacts.view import (change_contact_to_file, read_contact_from_file,
+                           search_contact_by_key, write_contact_to_file)
 
 
 def start():

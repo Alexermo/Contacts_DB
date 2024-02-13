@@ -25,7 +25,6 @@ class Contact:
         except (FileNotFoundError, json.JSONDecodeError, IndexError):
             return Contact.id_counter  # вернуть статический счетчик id
 
-
     def __str__(self):
         return (f"id: {self.id}, Фамилия: {self.surname}, Имя: {self.name}, Отчество: {self.midname},"
                 f" Организация: {self.org}, Раб.телефон: {self.work_phone}, Лич.телефон: {self.personal_phone}")

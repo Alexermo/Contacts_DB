@@ -1,6 +1,6 @@
 import json
-from contacts.models import Contact
 
+from contacts.models import Contact
 
 # contacts = 'contacts_bd.txt'
 
@@ -106,37 +106,36 @@ def change_contact_to_file():
             print("Contact not found")
 
     while True:
-            print()
-            print("1. Фамилия")
-            print("2. Имя")
-            print("3. Отчество")
-            print("4. Организация")
-            print("5. Раб.телефон")
-            print("7. Удалить этот контакт")
-            print("8. Quit")
-            option = input("Введите опцию: ")
-            # key_id = str(contact_id + 1)
-            if option == '1':
-                to_change['surname'] = input('Enter new surname: ')
-            elif option == '2':
-                to_change['name'] = input('Enter new name: ')
-            elif option == '3':
-                to_change['midname'] = input('Enter new midname: ')
-            elif option == '4':
-                to_change['org'] = input('Enter new org: ')
-            elif option == '5':
-                to_change['work_phone'] = input('Enter new work phone: ')
-            elif option == '6':
-                to_change['personal_phone'] = input('Enter new personal phone: ')
-            elif option == '7':
-                del contact_data[index_to_change]
-                print("Контакт успешно удален.")
-                break
-            elif option == '8':
-                break
-            else:
-                print("Введен неверный параметр, попробуйте еще раз.")
-            contact_data[index_to_change] = to_change
+        print()
+        print("1. Фамилия")
+        print("2. Имя")
+        print("3. Отчество")
+        print("4. Организация")
+        print("5. Раб.телефон")
+        print("7. Удалить этот контакт")
+        print("8. Quit")
+        option = input("Введите опцию: ")
+        if option == '1':
+            to_change['surname'] = input('Enter new surname: ')
+        elif option == '2':
+            to_change['name'] = input('Enter new name: ')
+        elif option == '3':
+            to_change['midname'] = input('Enter new midname: ')
+        elif option == '4':
+            to_change['org'] = input('Enter new org: ')
+        elif option == '5':
+            to_change['work_phone'] = input('Enter new work phone: ')
+        elif option == '6':
+            to_change['personal_phone'] = input('Enter new personal phone: ')
+        elif option == '7':
+            del contact_data[index_to_change]
+            print("Контакт успешно удален.")
+            break
+        elif option == '8':
+            break
+        else:
+            print("Введен неверный параметр, попробуйте еще раз.")
+        contact_data[index_to_change] = to_change
 
     with open('contacts_bd.txt', 'w') as file:
         json.dump(contact_data, file)
@@ -224,4 +223,4 @@ def search_contact_by_key():
             elif next_search.lower() == 'нет':
                 return False
             else:
-                print('Введите некорректный ответ')
+                print('Введен некорректный ответ')
